@@ -1,0 +1,146 @@
+/* تنسيق أساسي لإعادة ضبط المتصفح */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #0d1117; /* خلفية داكنة (Dark Theme) */
+    color: #c9d1d9;
+    line-height: 1.6;
+    padding-left: 100px; /* ترك مساحة لشريط السوشيال ميديا الثابت */
+}
+
+/* شريط الحسابات الجانبي الثابت */
+.social-bar {
+    position: fixed; /* لتثبيت الشريط */
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 80px;
+    background-color: #161b22; /* لون أغمق قليلاً */
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* ليبقى فوق كل شيء */
+}
+
+.social-bar h3 {
+    font-size: 0.8em;
+    color: #48a648;
+    margin-bottom: 20px;
+    text-orientation: mixed;
+    writing-mode: vertical-rl; /* لجعل النص عمودياً */
+}
+
+.social-icon {
+    display: block;
+    color: #c9d1d9;
+    text-decoration: none;
+    font-size: 0.7em;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* تأثير عند مرور الفأرة */
+    color: #48a648;
+}
+
+/* في العادة، يتم استخدام أيقونات Font Awesome، لكن سنضع هنا تنسيقاً بسيطاً */
+.instagram-icon::before { content: "📱"; font-size: 1.5em; display: block; margin-bottom: 5px; }
+.tiktok-icon::before { content: "🎶"; font-size: 1.5em; display: block; margin-bottom: 5px; }
+
+
+/* تنسيق محتوى الصفحة */
+.hero-section {
+    padding: 50px 5%;
+    background-color: #161b22;
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #30363d;
+}
+
+.hero-section h1 {
+    color: #48a648;
+    margin-bottom: 10px;
+}
+
+.content-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.info-section {
+    background-color: #161b22;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-left: 5px solid #48a648;
+}
+
+.info-section h2 {
+    color: #48a648;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #30363d;
+    padding-bottom: 10px;
+}
+
+/* تنسيق الأزرار */
+.resource-links {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.primary-btn {
+    background-color: #48a648;
+    color: #fff;
+}
+
+.primary-btn:hover {
+    background-color: #3b8e3b;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: #48a648;
+    border: 1px solid #48a648;
+}
+
+.secondary-btn:hover {
+    background-color: #48a648;
+    color: #0d1117;
+}
+
+/* تنسيق المحتوى المخفي */
+.hidden-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding-top: 0;
+    margin-top: 15px;
+    background-color: #0d1117;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.hidden-content.show {
+    max-height: 500px; /* قيمة كبيرة بما يكفي لظهور المحتوى */
+    padding-top: 15px;
+}
