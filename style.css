@@ -1,146 +1,121 @@
-/* تنسيق أساسي لإعادة ضبط المتصفح */
+/* إعادة ضبط أساسية */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    background-color: #0d1117; /* خلفية داكنة (Dark Theme) */
-    color: #c9d1d9;
+    background-color: #000000; /* خلفية سوداء بالكامل */
+    color: #ffffff; /* النص أبيض */
     line-height: 1.6;
-    padding-left: 100px; /* ترك مساحة لشريط السوشيال ميديا الثابت */
+    padding-left: 100px;
+    
+    /* إضافة خلفية (باكجروند) بشعار هاكر كبير */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%231a1a1a" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zm0 464c-115.5 0-208-92.5-208-208S140.5 48 256 48s208 92.5 208 208-92.5 208-208 208zm-48-240V128h96v96h-96zm-48 96v-96h-96v96h96zm144 0v-96h-96v96h96z"/></svg>'); 
+    /* ملاحظة: هذا SVG لشعار بسيط. إذا كان لديك شعار خاص، يجب رفعه كملف .png/jpg! */
+    background-size: 800px; /* حجم كبير جدا */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* لتثبيت الخلفية */
+    opacity: 0.1; /* شفافية عالية جدا ليكون باهتاً في الخلفية */
 }
 
 /* شريط الحسابات الجانبي الثابت */
 .social-bar {
-    position: fixed; /* لتثبيت الشريط */
+    position: fixed;
     left: 0;
     top: 0;
     height: 100%;
     width: 80px;
-    background-color: #161b22; /* لون أغمق قليلاً */
-    padding-top: 20px;
+    background-color: #1a1a1a; /* أسود غامق */
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    z-index: 1000; /* ليبقى فوق كل شيء */
+    box-shadow: 2px 0 10px rgba(255, 0, 0, 0.4); /* ظل أحمر خفيف */
+    z-index: 1000;
 }
 
 .social-bar h3 {
-    font-size: 0.8em;
-    color: #48a648;
-    margin-bottom: 20px;
+    font-size: 0.9em;
+    color: #ff0000; /* لون أحمر */
+    margin-bottom: 30px;
     text-orientation: mixed;
-    writing-mode: vertical-rl; /* لجعل النص عمودياً */
+    writing-mode: vertical-rl;
 }
 
 .social-icon {
     display: block;
-    color: #c9d1d9;
-    text-decoration: none;
-    font-size: 0.7em;
+    color: #ffffff; /* الأيقونة بيضاء */
+    font-size: 2em; /* حجم أكبر للأيقونة */
     text-align: center;
-    margin-bottom: 30px;
-    transition: transform 0.3s;
+    margin-bottom: 40px;
+    transition: color 0.3s;
 }
 
 .social-icon:hover {
-    transform: scale(1.1); /* تأثير عند مرور الفأرة */
-    color: #48a648;
+    color: #ff0000; /* الأيقونة تصبح حمراء عند مرور الفأرة */
+    transform: scale(1.1);
 }
-
-/* في العادة، يتم استخدام أيقونات Font Awesome، لكن سنضع هنا تنسيقاً بسيطاً */
-.instagram-icon::before { content: "📱"; font-size: 1.5em; display: block; margin-bottom: 5px; }
-.tiktok-icon::before { content: "🎶"; font-size: 1.5em; display: block; margin-bottom: 5px; }
-
 
 /* تنسيق محتوى الصفحة */
 .hero-section {
-    padding: 50px 5%;
-    background-color: #161b22;
+    padding: 70px 5%;
+    background-color: rgba(0, 0, 0, 0.7); /* خلفية شبه شفافة لتبرز على الخلفية الكبيرة */
     text-align: center;
     margin-bottom: 40px;
-    border-bottom: 1px solid #30363d;
+    border-bottom: 2px solid #ff0000; /* خط أحمر فاصل */
 }
 
 .hero-section h1 {
-    color: #48a648;
-    margin-bottom: 10px;
+    color: #ff0000; /* العنوان الرئيسي باللون الأحمر */
+    margin-bottom: 15px;
+    font-size: 2.5em;
 }
 
 .content-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
+    /* ... باقي التنسيق ... */
 }
 
 .info-section {
-    background-color: #161b22;
+    background-color: #1a1a1a;
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 5px;
     margin-bottom: 30px;
-    border-left: 5px solid #48a648;
+    border-left: 5px solid #ff0000; /* خط أحمر على اليسار */
 }
 
 .info-section h2 {
-    color: #48a648;
+    color: #ffffff;
     margin-bottom: 15px;
-    border-bottom: 1px dashed #30363d;
+    border-bottom: 1px dashed #444444;
     padding-bottom: 10px;
 }
 
-/* تنسيق الأزرار */
-.resource-links {
-    margin-top: 20px;
-}
-
+/* تنسيق الأزرار (أحمر وأبيض) */
 .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-right: 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
+    /* ... تنسيق عام ... */
     border: 1px solid transparent;
-    cursor: pointer;
 }
 
 .primary-btn {
-    background-color: #48a648;
-    color: #fff;
+    background-color: #ff0000; /* زر أحمر أساسي */
+    color: #ffffff;
 }
 
 .primary-btn:hover {
-    background-color: #3b8e3b;
+    background-color: #cc0000;
 }
 
 .secondary-btn {
     background-color: transparent;
-    color: #48a648;
-    border: 1px solid #48a648;
+    color: #ff0000;
+    border: 1px solid #ff0000;
 }
 
 .secondary-btn:hover {
-    background-color: #48a648;
-    color: #0d1117;
-}
-
-/* تنسيق المحتوى المخفي */
-.hidden-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    padding-top: 0;
-    margin-top: 15px;
-    background-color: #0d1117;
-    padding: 15px;
-    border-radius: 5px;
-}
-
-.hidden-content.show {
-    max-height: 500px; /* قيمة كبيرة بما يكفي لظهور المحتوى */
-    padding-top: 15px;
+    background-color: #ff0000;
+    color: #000000;
 }
