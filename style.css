@@ -10,15 +10,15 @@ body {
     background-color: #000000; /* خلفية سوداء بالكامل */
     color: #ffffff; /* النص أبيض */
     line-height: 1.6;
-    padding-left: 100px;
-
-    /* إضافة خلفية (باكجروند) رمزية (يمكنك حذف هذه الأسطر لو لم تعجبك) */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%231a1a1a" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zm0 464c-115.5 0-208-92.5-208-208S140.5 48 256 48s208 92.5 208 208-92.5 208-208 208zm-48-240V128h96v96h-96zm-48 96v-96h-96v96h96zm144 0v-96h-96v96h96z"/></svg>'); 
-    background-size: 800px;
+    padding-left: 80px; /* تقليل المساحة الفارغة على اليسار (بحجم الشريط) */
+    
+    /* إضافة خلفية (باكجروند) رمزية للهاكينغ */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%230F0F0F" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zm0 464c-115.5 0-208-92.5-208-208S140.5 48 256 48s208 92.5 208 208-92.5 208-208 208zm-48-240V128h96v96h-96zm-48 96v-96h-96v96h96zm144 0v-96h-96v96h96z"/></svg>'); 
+    background-size: cover; /* لملء الشاشة بالكامل */
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    opacity: 1; /* لتثبيت الخلفية */
+    opacity: 1; 
 }
 
 /* شريط الحسابات الجانبي الثابت */
@@ -51,7 +51,7 @@ body {
     font-size: 2em; /* حجم أكبر للأيقونة */
     text-align: center;
     margin-bottom: 40px;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .social-icon:hover {
@@ -61,7 +61,7 @@ body {
 
 /* تنسيق محتوى الصفحة */
 .hero-section {
-    padding: 70px 5%;
+    padding: 70px 5% 50px 5%; /* تقليل البادينغ السفلي */
     background-color: rgba(0, 0, 0, 0.7); /* خلفية شبه شفافة لتبرز على الخلفية الكبيرة */
     text-align: center;
     margin-bottom: 40px;
@@ -72,10 +72,11 @@ body {
     color: #ff0000; /* العنوان الرئيسي باللون الأحمر */
     margin-bottom: 15px;
     font-size: 2.5em;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* ظل نص أحمر */
 }
 
 .content-container {
-    max-width: 900px;
+    max-width: 950px; /* زيادة عرض المحتوى لملء الجانب الأيمن */
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -86,6 +87,7 @@ body {
     border-radius: 5px;
     margin-bottom: 30px;
     border-left: 5px solid #ff0000; /* خط أحمر على اليسار */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.2); /* ظل خفيف للقسم */
 }
 
 .info-section h2 {
@@ -95,7 +97,7 @@ body {
     padding-bottom: 10px;
 }
 
-/* تنسيق الأزرار (أحمر وأبيض) */
+/* تنسيق الأزرار 3D */
 .resource-links {
     margin-top: 20px;
 }
@@ -103,33 +105,52 @@ body {
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    margin-right: 10px;
+    margin-right: 15px; /* زيادة الهامش بين الأزرار */
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s;
-    border: 1px solid transparent;
+    transition: all 0.2s ease; /* transition لجميع التغييرات */
+    border: none; /* إزالة البوردر الافتراضي */
     cursor: pointer;
     font-weight: bold;
+    position: relative; /* لتأثير 3D */
+    top: 0;
+    left: 0;
 }
 
 .primary-btn {
     background-color: #ff0000; /* زر أحمر أساسي */
     color: #ffffff;
+    box-shadow: 0 5px 0 #b30000; /* ظل سفلي للزر (تأثير 3D) */
 }
 
 .primary-btn:hover {
     background-color: #cc0000;
+    top: 2px; /* تحريك الزر قليلاً للأسفل عند التمرير */
+    box-shadow: 0 3px 0 #990000; /* تصغير الظل */
+}
+
+.primary-btn:active { /* عند الضغط عليه */
+    top: 5px;
+    box-shadow: 0 0 0 #990000;
 }
 
 .secondary-btn {
-    background-color: transparent;
+    background-color: #1a1a1a; /* خلفية رمادية غامقة */
     color: #ff0000;
     border: 1px solid #ff0000;
+    box-shadow: 0 5px 0 #800000; /* ظل سفلي للزر */
 }
 
 .secondary-btn:hover {
     background-color: #ff0000;
     color: #000000;
+    top: 2px;
+    box-shadow: 0 3px 0 #660000;
+}
+
+.secondary-btn:active {
+    top: 5px;
+    box-shadow: 0 0 0 #660000;
 }
 
 /* تنسيق المحتوى المخفي */
