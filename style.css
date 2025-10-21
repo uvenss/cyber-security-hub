@@ -11,15 +11,14 @@ body {
     color: #ffffff; /* النص أبيض */
     line-height: 1.6;
     padding-left: 100px;
-    
-    /* إضافة خلفية (باكجروند) بشعار هاكر كبير */
+
+    /* إضافة خلفية (باكجروند) رمزية (يمكنك حذف هذه الأسطر لو لم تعجبك) */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%231a1a1a" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zm0 464c-115.5 0-208-92.5-208-208S140.5 48 256 48s208 92.5 208 208-92.5 208-208 208zm-48-240V128h96v96h-96zm-48 96v-96h-96v96h96zm144 0v-96h-96v96h96z"/></svg>'); 
-    /* ملاحظة: هذا SVG لشعار بسيط. إذا كان لديك شعار خاص، يجب رفعه كملف .png/jpg! */
-    background-size: 800px; /* حجم كبير جدا */
+    background-size: 800px;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* لتثبيت الخلفية */
-    opacity: 0.1; /* شفافية عالية جدا ليكون باهتاً في الخلفية */
+    background-attachment: fixed;
+    opacity: 1; /* لتثبيت الخلفية */
 }
 
 /* شريط الحسابات الجانبي الثابت */
@@ -76,7 +75,9 @@ body {
 }
 
 .content-container {
-    /* ... باقي التنسيق ... */
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .info-section {
@@ -95,9 +96,20 @@ body {
 }
 
 /* تنسيق الأزرار (أحمر وأبيض) */
+.resource-links {
+    margin-top: 20px;
+}
+
 .btn {
-    /* ... تنسيق عام ... */
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
     border: 1px solid transparent;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .primary-btn {
@@ -118,4 +130,21 @@ body {
 .secondary-btn:hover {
     background-color: #ff0000;
     color: #000000;
+}
+
+/* تنسيق المحتوى المخفي */
+.hidden-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding-top: 0;
+    margin-top: 15px;
+    background-color: #0d1117;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.hidden-content.show {
+    max-height: 500px;
+    padding-top: 15px;
 }
